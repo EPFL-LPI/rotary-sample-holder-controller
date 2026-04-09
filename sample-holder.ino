@@ -299,6 +299,14 @@ bool at_home() {
 
 /**
  * Scans one revolution for home positions
+ * 
+ * @param positions: If `true`, `homed` is populated with the
+ * step positions where a home signal is detected. Remaining elements
+ * are set to `-1`.
+ * e.g. `[34, 35, 37, 38, 39, 40, -1, -1, -1, -1]`
+ * If `false`, `homed` is filled with `1` if a home signal is detected,
+ * otherwise `0`.
+ * e.g. `[0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0]`
  */
 void scan( int homed[], bool positions = false ) {  
   bool is_home;
